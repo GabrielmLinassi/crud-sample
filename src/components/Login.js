@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 import { Formik, Form } from "formik";
 import { MyTextField } from "./Formik/TextField";
@@ -59,7 +60,7 @@ const Login = ({ history }) => {
           );
         }}
       </Formik>
-      <a href="/signup">Don't have an account? Sign Up</a>
+      <Link to="/signup">Don't have an account? Sign Up</Link>
     </div>
   );
 };
