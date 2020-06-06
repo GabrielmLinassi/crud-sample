@@ -3,21 +3,23 @@ import PropTypes from "prop-types";
 
 import { Field, ErrorMessage } from "formik";
 
-import TextField from "@material-ui/core/TextField";
+import { TextField } from "@material-ui/core";
 
 // Material UI field mixed with Formik Field
-export const MyTextField = ({ name, label, type }) => (
-  <Field
-    as={TextField}
-    required
-    name={name}
-    label={label}
-    fullWidth
-    type={type}
-    autoComplete="false"
-    helperText={<ErrorMessage name={name} />}
-  />
-);
+export const MyTextField = ({ name, label, type, required = false }) => {
+  return (
+    <Field
+      as={TextField}
+      required={required}
+      name={name}
+      label={label}
+      fullWidth
+      type={type}
+      autoComplete="false"
+      helperText={<ErrorMessage name={name} />}
+    />
+  );
+};
 
 // Type checking
 MyTextField.propTypes = {
