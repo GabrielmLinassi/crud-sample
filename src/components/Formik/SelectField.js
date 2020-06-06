@@ -10,9 +10,9 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
 // Material UI field mixed with Formik Field
-export const MySelectField = ({ name, label, items }) => {
+export const MySelectField = ({ name, label, items, required = false }) => {
   return (
-    <FormControl fullWidth>
+    <FormControl fullWidth required={required}>
       <InputLabel>{label}</InputLabel>
       <Field as={Select} name={name}>
         {items.map((item) => (
