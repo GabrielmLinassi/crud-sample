@@ -11,13 +11,22 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  makeStyles,
 } from "@material-ui/core";
 
 //------
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+  },
+}));
+
 const Home = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [showProfile, setShowProfile] = useState(false);
+
+  const classes = useStyles();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -28,8 +37,8 @@ const Home = () => {
   };
 
   return (
-    <>
-      <AppBar color="primary" position="static" fullWidth>
+    <div className={classes.root}>
+      <AppBar color="primary" position="fixed" fullWidth>
         <Toolbar>
           <Typography variant="subtitle2" color="inherit" style={{ flex: 1 }}>
             {`CRUD APP`}
@@ -69,7 +78,7 @@ const Home = () => {
         </Toolbar>
       </AppBar>
       {showProfile && <Profile setShowProfile={setShowProfile} />}
-    </>
+    </div>
   );
 };
 
