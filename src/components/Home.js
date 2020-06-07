@@ -9,6 +9,7 @@ import {
   AppBar,
   Toolbar,
   IconButton,
+  Button,
   Menu,
   MenuItem,
   makeStyles,
@@ -19,6 +20,13 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    height: "100%",
+    minHeight: "100vh",
+  },
+  lastChild: {
+    marginBottom: "15px",
   },
 }));
 
@@ -38,10 +46,17 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar color="primary" position="fixed" fullWidth>
+      <AppBar color="primary" position="sticky" fullWidth>
         <Toolbar>
           <Typography variant="subtitle2" color="inherit" style={{ flex: 1 }}>
-            {`CRUD APP`}
+            <Button
+              color="inherit"
+              onClick={() => {
+                setShowProfile(false);
+              }}
+            >
+              CRUD APP
+            </Button>
           </Typography>
           <IconButton color="inherit">
             <AccountCircle
@@ -60,7 +75,7 @@ const Home = () => {
             >
               <MenuItem
                 onClick={() => {
-                  setShowProfile(true);
+                  setShowProfile(!showProfile);
                   handleClose();
                 }}
               >
@@ -77,7 +92,9 @@ const Home = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      {showProfile && <Profile setShowProfile={setShowProfile} />}
+      <div className={classes.lastChild}>
+        {showProfile && <Profile setShowProfile={setShowProfile} />}
+      </div>
     </div>
   );
 };
