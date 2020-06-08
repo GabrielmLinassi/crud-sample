@@ -23,6 +23,7 @@ import app from "./../Base";
 
 import ChangeEmail from "./ChangeEmail";
 import ChangePassword from "./ChangePassword";
+import DeleteAccount from "./DeleteAccount";
 
 //------
 const useStyles = makeStyles((theme) => ({
@@ -40,6 +41,14 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     padding: "15px",
+  },
+  buttons: {
+    display: "flex",
+    justifyContent: "flex-end",
+    margin: "15px auto 0",
+    "& button": {
+      marginLeft: "5px",
+    },
   },
 }));
 
@@ -142,14 +151,6 @@ const Profile = (props) => {
                   }}
                 >
                   <div style={{ marginTop: "15px" }}>
-                    {/* <Button
-                      variant="text"
-                      color="default"
-                      name="close"
-                      onClick={() => props.setShowProfile(false)}
-                    >
-                      CLOSE
-                    </Button> */}
                     <Button
                       variant="contained"
                       color="primary"
@@ -171,6 +172,18 @@ const Profile = (props) => {
       </Box>
       <ChangeEmail />
       <ChangePassword />
+      <DeleteAccount />
+      <div className={classes.buttons}>
+        <Button
+          variant="contained"
+          color="default"
+          onClick={() => {
+            props.setShowProfile(false);
+          }}
+        >
+          CLOSE
+        </Button>
+      </div>
     </Container>
   );
 };
