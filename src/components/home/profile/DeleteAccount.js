@@ -3,11 +3,11 @@ import React from "react";
 import { Box, Button, Typography, makeStyles } from "@material-ui/core";
 
 import { Formik, Form } from "formik";
-import { MyTextField } from "./Formik/TextField";
+import { MyTextField } from "components/formik/TextField";
 
 import * as Yup from "yup";
 
-import app from "./../Base";
+import app from "../../../Base";
 
 const styles = makeStyles((theme) => ({
   box: {

@@ -13,17 +13,17 @@ import {
 } from "@material-ui/core";
 
 import { Formik, Form } from "formik";
-import { MyTextField } from "./Formik/TextField";
-import { MySelectField } from "./Formik/SelectField";
+import { MyTextField } from "components/formik/TextField";
+import { MySelectField } from "components/formik/SelectField";
 
-import { items } from "../PositionValues";
+import { items } from "PositionValues";
 
-import { AuthContext } from "./../Auth";
-import app from "./../Base";
+import { AuthContext } from "Auth";
+import app from "../../Base";
 
-import ChangeEmail from "./ChangeEmail";
-import ChangePassword from "./ChangePassword";
-import DeleteAccount from "./DeleteAccount";
+import ChangeEmail from "./profile/ChangeEmail";
+import ChangePassword from "./profile/ChangePassword";
+import DeleteAccount from "./profile/DeleteAccount";
 
 //------
 const useStyles = makeStyles((theme) => ({

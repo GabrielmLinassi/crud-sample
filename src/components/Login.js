@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
 
 import { Formik, Form } from "formik";
-import { MyTextField } from "./Formik/TextField";
+import { MyTextField } from "./formik/TextField";
 import * as Yup from "yup";
 
 import {
@@ -14,7 +14,7 @@ import {
 } from "@material-ui/core";
 
 import app from "./../Base";
-import { AuthContext } from "./../Auth";
+import { AuthContext } from "Auth";
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import app from "../Base";
-import Profile from "./Profile";
+import Profile from "./home/Profile";
 
 import { AccountCircle } from "@material-ui/icons";
 import {

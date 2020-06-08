@@ -15,9 +15,9 @@ import {
 
 import app from "./../Base";
 
-import { MyTextField } from "./Formik/TextField";
-import { MySelectField } from "./Formik/SelectField";
-import { items } from "../PositionValues";
+import { MyTextField } from "./formik/TextField";
+import { MySelectField } from "./formik/SelectField";
+import { items } from "PositionValues";
 
 const useStyles = makeStyles((theme) => ({
   root: {

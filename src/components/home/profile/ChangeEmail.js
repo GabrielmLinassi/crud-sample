@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import { Formik, Form } from "formik";
 import { Box, Button, Typography, makeStyles } from "@material-ui/core";
-import { MyTextField } from "./Formik/TextField";
+import { MyTextField } from "components/formik/TextField";
 
-import app from "./../Base";
+import app from "../../../Base";
 
 const useStyles = makeStyles((theme) => ({
   box: {
