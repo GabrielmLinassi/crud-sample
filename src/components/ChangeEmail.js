@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     display: "flex",
+    flexWrap: "wrap",
     alignItems: "flex-end",
     padding: "15px",
   },
@@ -33,22 +34,44 @@ const ChangeEmail = (props) => {
 
   return (
     <Box boxShadow={3} className={classes.box}>
-      {/* <Typography variant="h5" color="inherit" align="center">
+      <Typography
+        variant="subtitle1"
+        color="inherit"
+        align="left"
+        style={{ padding: "0 15px" }}
+      >
         Change Email
-      </Typography> */}
+      </Typography>
       <Formik
         enableReinitialize
         initialValues={{
           email: email || "",
+          password: "",
         }}
-        onSubmit={({ email }) => {
+        onSubmit={({ password, email }) => {
+          const credentials = app.auth.EmailAuthProvider.credential(
+            app.auth().currentUser.email,
+            password
+          );
+
           app
             .auth()
-            .currentUser.updateEmail(email)
+            .currentUser.reauthenticateWithCredential(credentials)
             .then(() => {
-              setEmail(app.auth().currentUser.email);
+              app
+                .auth()
+                .currentUser.updateEmail(email)
+                .then(() => {
+                  setEmail(email);
+                  alert(`Email changed to "${email}" sucessfully!`);
+                })
+                .catch((err) => {
+                  alert(err.message);
+                  console.log(err);
+                });
             })
             .catch((err) => {
+              alert("Password Invalid");
               console.log(err);
             });
         }}
@@ -56,15 +79,17 @@ const ChangeEmail = (props) => {
         {(formik) => {
           return (
             <Form className={classes.form}>
-              <MyTextField name="email" label="Email" type="email" />
+              <div style={{ flex: "1 1 150px", margin: "5px" }}>
+                <MyTextField name="password" label="Password" type="password" />
+              </div>
+              <div style={{ flex: "1 1 150px", margin: "5px" }}>
+                <MyTextField name="email" label="Email" type="email" />
+              </div>
               <Button
                 variant="contained"
                 color="primary"
                 type="submit"
                 className={classes.button}
-                disabled={
-                  !formik.dirty || !formik.isValid || formik.isSubmitting
-                }
               >
                 SAVE
               </Button>
