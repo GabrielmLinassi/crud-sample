@@ -13,8 +13,8 @@ import {
   Box,
 } from "@material-ui/core";
 
-import app from "./../Base";
-import { AuthContext } from "Auth";
+import app from "utils/Base";
+import { AuthContext } from "utils/Auth";
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -1,8 +1,8 @@
 import React from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
 
-import { AuthProvider } from "./Auth";
-import PrivateRoute from "./PrivateRoute";
+import { AuthProvider } from "./utils/Auth";
+import PrivateRoute from "./utils/PrivateRoute";
 
 import Login from "./components/Login";
 import SignupForm from "./components/SignUp";

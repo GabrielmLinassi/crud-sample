@@ -6,7 +6,7 @@ import { MyTextField } from "components/formik/TextField";
 
 import * as Yup from "yup";
 
-import app from "../../../Base";
+import app from "utils/Base";
 
 const useStyles = makeStyles((theme) => ({
   box: {

@@ -13,11 +13,11 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 
-import app from "./../Base";
+import app from "utils/Base";
 
 import { MyTextField } from "./formik/TextField";
 import { MySelectField } from "./formik/SelectField";
-import { items } from "PositionValues";
+import { items } from "utils/PositionValues";
 
 const useStyles = makeStyles((theme) => ({
   root: {

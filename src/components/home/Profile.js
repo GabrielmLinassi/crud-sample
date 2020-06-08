@@ -16,10 +16,10 @@ import { Formik, Form } from "formik";
 import { MyTextField } from "components/formik/TextField";
 import { MySelectField } from "components/formik/SelectField";
 
-import { items } from "PositionValues";
+import { items } from "utils/PositionValues";
 
-import { AuthContext } from "Auth";
-import app from "../../Base";
+import { AuthContext } from "utils/Auth";
+import app from "utils/Base";
 
 import ChangeEmail from "./profile/ChangeEmail";
 import ChangePassword from "./profile/ChangePassword";
