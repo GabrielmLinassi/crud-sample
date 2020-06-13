@@ -15,6 +15,8 @@ import {
   makeStyles,
 } from "@material-ui/core";
 
+import EnhancedTable from "./home/EnhancedTable";
+
 //------
 
 const useStyles = makeStyles((theme) => ({
@@ -93,6 +95,7 @@ const Home = () => {
         </Toolbar>
       </AppBar>
       <div className={classes.lastChild}>
+        <EnhancedTable />
         {showProfile && <Profile setShowProfile={setShowProfile} />}
       </div>
     </div>
